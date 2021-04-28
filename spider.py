@@ -30,7 +30,7 @@ class thread_crawl(threading.Thread):
         self.qiushi_spider()
         print("Exiting ", self.threadID)
 
-    def qiushi_spider(self):
+    def spider(self):
         # page = 1
         while True:
             if self.q.empty():
@@ -118,7 +118,7 @@ lock=threading.Lock()
 total=0
 
 def main():
-    output=open('qiushibaike.json', 'a')
+    output=open('spider.json', 'a')
 
     pageQueue=Queue(68007)
     for j in range(1, 68007):
